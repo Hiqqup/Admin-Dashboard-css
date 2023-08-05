@@ -1,0 +1,13 @@
+.current{
+
+	background-color: orange;
+}
+.marked::before {
+  transform: translateX(14px) translateY(20px);
+  border-radius: 100%;
+  position: absolute;
+  background: blue;
+  height: 8px;
+  content: '';
+  width: 8px;
+}
