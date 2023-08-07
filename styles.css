@@ -1,13 +1,193 @@
-.current{
-
-	background-color: orange;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;900&display=swap');
+*{
+  font-family: 'Roboto', sans-serif;
 }
-.marked::before {
-  transform: translateX(14px) translateY(20px);
+.current{
+	background-color: yellow;
+}
+/*marked*/
+.marked>.calendar-num::before ,span.marked::before {
+  transform: translateX(14px) translateY(-8px);
   border-radius: 100%;
   position: absolute;
   background: blue;
   height: 8px;
   content: '';
   width: 8px;
+}
+span.marked::before {
+  transform: translateX(14px) translateY(0px);
+}
+
+/*layout*/
+:root{
+  --header-y: 100px;
+  height: 100vh;
+}
+body{
+  background-color: #ccffcc;
+  margin: 0;
+}
+main{
+  width: 99vw;
+  display: grid;
+  grid-template-rows: var(--header-y) 1fr;
+  grid-template-columns: 15vw 4fr 1fr;
+  height: 99vh;
+  margin: 0;
+  grid-row-gap: 50px;
+}
+header{
+  grid-column: 1/-1;
+  display:grid;
+  grid-template: 100px/ minmax(min-content,15vw) 1fr repeat(2,50px) 100px;
+  align-items: center;
+  gap: 50px;
+}
+.projects{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+}
+
+.event-dates{
+  margin: 0 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  justify-items:space-between;
+}
+input[type=date]{
+  justify-self: end;
+}
+output{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 50px);
+  justify-content: space-evenly;
+}
+
+ .bottom-text{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.left{
+  display: grid;
+  grid-template-rows: repeat(6,50px) 1fr;
+  align-items: center;
+  padding-left: min(90px, 1.5vw);
+  gap:50px;
+}
+.right *{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+  justify-self: end;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+/*somme other stuff*/
+.bottom-text div{
+  background-color: white;
+  padding: 50px 100px;
+  border-radius: 20px
+}
+
+.bottom-text div h3{display: inline}
+span{
+  margin: 0 12px;
+  transform:translateY(6px);
+}
+
+span.marked{
+  transform:translateY(0);
+}
+span.marked::before{
+  background-color: yellow;
+}
+.anouncements{
+  background-color: white;
+  border-radius: 20px
+}
+img{
+  border-radius: 20px;
+}
+header img{
+  border-radius: 100%;
+}
+
+input, select{
+  border: 0;
+}
+select{
+  background-color: rgba(0,0,0,0);
+  width: min-content;
+
+}
+a{
+  text-decoration: none; 
+  color: black;
+}
+
+*{
+  font-size: 16px;
+}
+
+
+input[type=search]{
+  width: 400px;
+  height: 36px;
+  padding: 8px 24px;
+  border-radius: 16px;
+
+}
+input[type=date]{
+  height: 36px;
+  padding: 2px 8px;
+  border-radius: 16px;
+}
+h1{
+  font-size: 48px;
+  padding-left: min(90px, 1.5vw);
+}
+h1 span{
+  font-size: 48px;
+  color: green;
+  margin: 0;
+}
+h2{
+  font-size: 24px;
+}
+
+.projects{
+  text-align: center;
+}
+.pipe{
+  color: green;
+  font-size: 36px;
+}
+h3{
+  margin: 0;
+}
+.anouncements{
+  height: 500px;
+}
+.anouncements p{
+  margin: 0 50px;
+  text-align: center;
+  margin-top: -30px;
+}
+#calendar-output div{
+  display: grid;
+  justify-content: center;
+  border-radius: 24px;
 }
