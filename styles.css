@@ -23,6 +23,8 @@ span.marked::before {
 :root{
   --header-y: 100px;
   height: 100vh;
+  --background-woodruf: #ccffcc;
+  --darker-background-woodruf: #95cc89;
 }
 body{
   background-color: #ccffcc;
@@ -97,11 +99,14 @@ output{
 }
 /*somme other stuff*/
 .bottom-text div{
-  background-color: white;
+  background-color: var(--darker-background-woodruf);
   padding: 50px 100px;
   border-radius: 20px
 }
 
+.anouncements *, .bottom-text div{
+  color: black;
+}
 .bottom-text div h3{display: inline}
 span{
   margin: 0 12px;
@@ -115,7 +120,7 @@ span.marked::before{
   background-color: yellow;
 }
 .anouncements{
-  background-color: white;
+  background-color: var(--darker-background-woodruf);
   border-radius: 20px
 }
 img{
